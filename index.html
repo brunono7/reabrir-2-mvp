@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="REABRIR — um check-in rápido para entender se é hora de conversar, esperar ou dar espaço depois de uma briga." />
+  <meta name="theme-color" content="#6f1d2c" />
+  <title>REABRIR — É hora de falar?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="REABRIR — início">
+        <span class="brand-mark">R</span>
+        <span class="brand-text">REABRIR</span>
+      </a>
+      <a class="topbar-link" href="#como-funciona">Como funciona</a>
+    </header>
+
+    <main>
+      <section id="inicio" class="hero section-pad">
+        <div class="hero-copy">
+          <p class="eyebrow">CHECK-IN PÓS-BRIGA • ~60 SEGUNDOS</p>
+          <h1>Vocês brigaram.<br><span>É hora de falar, esperar ou dar espaço?</span></h1>
+          <p class="hero-sub">Responda 6 perguntas e receba uma leitura simples do momento antes de mandar outra mensagem ou tentar resolver tudo no impulso.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" data-start-quiz>Fazer o check-in gratuito</button>
+            <p class="microcopy">Sem cadastro. Resultado imediato.</p>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-hidden="true">
+          <div class="status-stack">
+            <div class="status-card red">
+              <span class="status-dot"></span>
+              <div><strong>Vermelho</strong><small>Não tente resolver agora</small></div>
+            </div>
+            <div class="status-card yellow">
+              <span class="status-dot"></span>
+              <div><strong>Amarelo</strong><small>Prepare antes de falar</small></div>
+            </div>
+            <div class="status-card green">
+              <span class="status-dot"></span>
+              <div><strong>Verde</strong><small>Há condições melhores</small></div>
+            </div>
+          </div>
+          <div class="hero-card-note">Um guia prático para reduzir decisões por impulso.</div>
+        </div>
+      </section>
+
+      <section id="como-funciona" class="how section-pad narrow">
+        <p class="eyebrow">COMO FUNCIONA</p>
+        <h2>Não existe “mensagem perfeita”. Existe contexto.</h2>
+        <div class="steps-grid">
+          <article><span>01</span><h3>Você responde</h3><p>Seis perguntas sobre tempo, intensidade, espaço e intenção.</p></article>
+          <article><span>02</span><h3>O REABRIR organiza</h3><p>Regras simples evitam que uma pontuação esconda sinais importantes.</p></article>
+          <article><span>03</span><h3>Você decide melhor</h3><p>Recebe um resultado vermelho, amarelo ou verde com próximo passo.</p></article>
+        </div>
+      </section>
+
+      <section id="quiz" class="quiz-section section-pad" hidden>
+        <div class="quiz-shell">
+          <div class="quiz-header">
+            <div>
+              <p class="eyebrow">CHECK-IN REABRIR</p>
+              <h2 id="quiz-title">Pergunta 1 de 6</h2>
+            </div>
+            <button class="text-button" id="close-quiz" type="button">Fechar</button>
+          </div>
+
+          <div class="progress-track" aria-hidden="true"><div id="progress-bar"></div></div>
+
+          <div id="question-area" class="question-area" aria-live="polite"></div>
+
+          <div class="quiz-nav">
+            <button class="btn btn-secondary" id="back-btn" type="button" disabled>Voltar</button>
+            <button class="btn btn-primary" id="next-btn" type="button" disabled>Continuar</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="result" class="result-section section-pad" hidden>
+        <div class="result-shell">
+          <div id="result-badge" class="result-badge"></div>
+          <p class="eyebrow">SEU RESULTADO</p>
+          <h2 id="result-title"></h2>
+          <p id="result-summary" class="result-summary"></p>
+
+          <div id="result-actions" class="result-actions"></div>
+
+          <div id="goal-box" class="goal-box" hidden>
+            <p class="eyebrow">QUAL É O SEU OBJETIVO?</p>
+            <h3>Escolha o que você quer fazer agora</h3>
+            <div id="goal-options" class="goal-options"></div>
+            <div id="message-preview" class="message-preview" hidden></div>
+          </div>
+
+          <div class="offer-card">
+            <div class="offer-copy">
+              <p class="eyebrow">REABRIR COMPLETO</p>
+              <h3>Não pare no resultado. Tenha um plano para o que vem depois.</h3>
+              <p>O material completo reúne o Método REABRIR, Semáforo da Conversa, Teste de Prontidão, 30 mensagens prontas, planos de 24 horas, checklists e cenários para lidar com respostas frias, silêncio, pedido de espaço e retomada do diálogo.</p>
+              <ul>
+                <li>E-book completo REABRIR</li>
+                <li>Biblioteca de mensagens por situação</li>
+                <li>Planos de próximos passos</li>
+                <li>Checklists para evitar agir por impulso</li>
+              </ul>
+            </div>
+            <div class="offer-price">
+              <span>Acesso completo</span>
+              <strong>R$29,90</strong>
+              <button class="btn btn-primary btn-wide" id="checkout-btn" type="button">Quero acessar o REABRIR</button>
+              <small>Pagamento e entrega pela Kiwify.</small>
+            </div>
+          </div>
+
+          <div class="disclaimer">
+            <strong>Importante:</strong> o REABRIR é um material educativo para comunicação após conflitos. Não substitui acompanhamento psicológico, jurídico ou serviços de emergência. Em situações de ameaça, violência, coerção, perseguição ou medo físico, a prioridade é segurança e apoio adequado — não retomar a conversa.
+          </div>
+
+          <button class="text-button restart" id="restart-btn" type="button">Refazer o check-in</button>
+        </div>
+      </section>
+
+      <section class="final-cta section-pad narrow">
+        <p class="eyebrow">ANTES DE ENVIAR OUTRA MENSAGEM</p>
+        <h2>Um minuto agora pode evitar outra conversa no impulso.</h2>
+        <button class="btn btn-primary" data-start-quiz>Fazer o check-in gratuito</button>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>REABRIR</span>
+      <span>Material educativo • 2026</span>
+    </footer>
+  </div>
+
+  <div id="cookie-banner" class="cookie-banner" hidden>
+    <p>Usamos dados de navegação para medir a campanha e melhorar esta página. Você pode aceitar ou continuar sem rastreamento de marketing.</p>
+    <div>
+      <button id="decline-cookies" class="btn btn-secondary btn-small" type="button">Continuar sem</button>
+      <button id="accept-cookies" class="btn btn-primary btn-small" type="button">Aceitar</button>
+    </div>
+  </div>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
